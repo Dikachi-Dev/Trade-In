@@ -1,0 +1,73 @@
+﻿@page
+@model TradeIn.Pages.Admin.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_AdminLayout.cshtml";
+}
+
+<h1>Generated Estimate</h1>
+
+@*<p>
+    <a asp-page="Create">Create New</a>
+</p>*@
+
+<table id="table"
+       data-show-export="true"
+       data-pagination="true"
+       data-side-pagination="server"
+       data-click-to-select="true"
+       data-toolbar="#toolbar"
+       data-show-toggle="true"
+       data-show-columns="true"
+       data-search="true"
+       data-url="/Admin/Index?handler=Estimate">
+    <thead>
+        <tr>
+            <th data-field="refnumber">Reference number</th>
+            <th data-field="name"> Name</th>
+            <th data-field="email">Email</th>
+            <th data-field="phoneNumber">Phone Number</th>          
+            <th data-field="estimateDate">Estimate Date</th>
+            <th data-field="brand">Brand</th>
+            <th data-field="category">Category</th>
+            <th data-field="model">Model</th>
+            <th data-field="generation">Generation</th>
+            <th data-field="otherItem">Other Item</th>
+            <th data-field="condition">Condition</th>
+            <th data-field="amount">Amount</th>
+            <th data-field="delete"></th>
+            
+            
+        </tr>
+    </thead>
+</table>
+
+
+            @section Scripts{
+                <script>
+                    function deleteContact(id) {
+
+                        $.ajax("/Admin/Delete?handler=Delete&id=" + id,
+                            {
+                                method: "POST",
+                                
+                                error: function (jqXhr, textStatus, errorMessage) {
+                                    alert('Error: ' + errorMessage);
+                                }
+                            });
+
+                    }
+                    var $table = $('#table')
+
+
+
+                    $table.bootstrapTable('destroy').bootstrapTable({
+                        exportDataType: 'all',
+                        exportTypes: ['csv', 'excel', 'pdf'],
+
+                    });
+
+
+                </script>
+            }

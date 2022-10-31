@@ -1,0 +1,64 @@
+﻿@page
+@model TradeIn.Pages.User_DetailModel
+
+@{
+    ViewData["Title"] = "User_Detail";
+}
+
+@*<h1>Contact Information</h1>
+
+<hr />*@
+<div style="padding: 30px; text-align: center">
+    <div class="row justify-content-center">
+            <div class="col-md-12" style="padding: 5% 10% 5% 10%; font-size:20px">
+                <h1>Contact Information</h1>
+
+                <hr style="padding-bottom: 20px" />
+                <form method="post" >
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>             
+    
+   
+                <div class="col-12">
+                    <label asp-for="UserInfo.Address" class="form-label" style="float: left;">Address </label>
+                    <input asp-for="UserInfo.Address" type="text" class="form-control" >
+                    <span asp-validation-for="UserInfo.Address" class="text-danger"></span>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label asp-for="UserInfo.State" class="form-label" style="float: left;">State</label>
+                        <input asp-for="UserInfo.State" type="text" class="form-control" >
+                        <span asp-validation-for="UserInfo.State" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-4">
+                        <label asp-for="UserInfo.County" class="form-label" style="float: left;">County</label>
+                        <input asp-for="UserInfo.County" type="text" class="form-control">
+                        <span asp-validation-for="UserInfo.County" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-2">
+                        <label asp-for="UserInfo.PostCode" class="form-label" style="float: left;">Postal Code</label>
+                        <input asp-for="UserInfo.PostCode" type="text" class="form-control">
+                        <span asp-validation-for="UserInfo.PostCode" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <h3>Add your Paypal payment address</h3>
+                    <label asp-for="UserInfo.Paypal" class="form-label" style="float: left;">Paypal Email</label>
+                    <input asp-for="UserInfo.Paypal" type="email" class="form-control">
+                    <span asp-validation-for="UserInfo.Paypal" class="text-danger"></span>
+                </div>
+    
+                <div class="col-12 text-center" style="padding-top: 20px;">
+                    <button type="submit" value="Create" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

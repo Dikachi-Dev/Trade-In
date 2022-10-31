@@ -1,0 +1,253 @@
+﻿@page
+@model TradeIn.Pages.Admin.ContactsModel
+
+@{
+    ViewData["Title"] = "Contacts";
+    Layout = "_AdminLayout.cshtml";
+}
+
+<h1>Contacts</h1>
+ @*<button class="btn btn-primary" onclick="tableToCSV()" style="padding-bottom:10px">Download List</button>
+*@
+<table id="table"
+       data-show-export="true"
+       data-pagination="true"
+       data-side-pagination="server"
+       data-click-to-select="true"
+       data-toolbar="#toolbar"
+       data-show-toggle="true"
+       data-show-columns="true"
+       data-search="true"
+       data-url="/Admin/Contacts?handler=Contact">
+       <thead>
+  <tr>
+    <th data-field="name" > Name</th>
+    <th data-field="phoneNumber">Phone Number</th>
+    <th data-field="email">Email</th>
+    <th data-field="delete"></th>
+    <th data-field="edit"></th>
+  </tr>
+  </thead>
+</table>
+
+
+@*<table id="listing" class="table table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>
+                Email
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                PhoneNumber
+            </th>
+            <th></th>
+            
+        </tr>
+    </thead>
+</table>*@
+
+@section Scripts{
+
+    <script>
+        function deleteContact(id) {
+
+            $.ajax("/Admin/Contacts?handler=Delete&Id=" + id,
+                {
+                    method: "GET",
+                    success: function (data, status, xhr) {
+                        $table.bootstrapTable('destroy').bootstrapTable({
+                            exportDataType: 'all',
+                            exportTypes: ['csv', 'excel', 'pdf'],
+
+                        });
+                    },
+                    error: function (jqXhr, textStatus, errorMessage) {
+                       alert('Error: ' + errorMessage);
+                    }
+                });
+                 
+        }
+        var $table = $('#table')
+
+        
+            
+                $table.bootstrapTable('destroy').bootstrapTable({
+                    exportDataType: 'all',
+                    exportTypes: [ 'csv', 'excel', 'pdf'],
+                    
+                });
+            
+       
+    </script>
+
+    @*<script>
+        $(document).ready(function () {
+            $('#listing').DataTable();
+            var arrayReturn = [];           
+            $.getJSON("/Admin/Contacts?handler=Contact", function (data) {
+                for (var i = 0, len = data.length; i < len; i++) {
+                    var email = data[i].email;
+                    var name = data[i].name;
+                    var phone = data[i].phoneNumber;
+                    var id = data[i].id;
+                    arrayReturn.push([name, phone, email, '<a asp-route-id="id"  asp-page-handler="Delete" href="/Admin/Contacts?handler=Delete?id"> Delete </a>']);
+                }
+                inittable(arrayReturn);              
+            });
+            function inittable(data) {
+                $('#listing').DataTable({
+                    destroy: true,
+                    "aaData": data,
+                    "dom": 'lBfrtip',
+     
+                    buttons: [
+                        {
+                            extend: 'excelHtml5',
+                            title:'contact',
+                            text: 'Export to Excel',                           
+                            download: 'open',
+                            orientation: 'portrait',
+                            exportOptions: {
+                                columns: ':visible'
+                            }
+                        }]
+                });
+            }
+        })
+    </script>*@
+}
+
+
+@*@foreach (var item in Model.Contact) {
+    <tbody>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+            <td>                
+                <a asp-route-id="@item.Id"  asp-page-handler="Delete">Delete</a>              
+            </td>
+        </tr>
+    </tbody>
+//}
+@*
+            @section Scripts{
+   @* <script src="/js/jquery.table2excel.js"></script>*@
+
+@*       $.getJSON("/Laptop?handler=Models", { Id: $('#brands').val() }, function (cards) {
+                        //$('#models').find('option').remove();
+                        $.each(cards, function (index, card) {
+                            console.log(card);
+                            $('#models').append('
+    <option value="' + card.id + '">' + card.description + '</option>')
+
+                        });
+
+                    });*@
+                @*<script>
+                    $(document).ready(function () {
+                        $('#example').DataTable();
+                        $.getJSON("/Laptop?handler=Contact", function (data) {
+                            console.log(data);
+                            for (var i = 0, len = data.length; i < len; i++) {
+                                var email = data[i].email;
+                                var name = data[i].name;
+                                var phone = data[i].phonenumber;
+                                var id = data[i].id;
+                                arrayReturn.push([name, phone, email,id, ]);
+                            }
+                            inittable(arrayReturn);
+                            
+                    });
+                    </script>
+                    }
+                    $('#example').DataTable({
+                       "aaData": data,
+                        "dom": 'lBfrtip',
+                    //    buttons: [
+                    //        {
+                    //            extend: 'excelHtml5',
+                    //            text: 'Export to Excel',
+                    //            title: 'js-tutorials.com : Export to datatable data into Excel',
+
+                    //            download: 'open',
+                    //            orientation: 'landscape',
+                    //            exportOptions: {
+                    //                columns: ':visible'
+                    //            }
+                    //        }]
+                    //});
+                    
+
+                        //function tableToCSV() {
+                        //    var table = $("#htmltable");
+                        //    if (table && table.length) {
+                        //        $(table).table2excel({
+                        //            exclude: ".noExl",
+                        //            name: "Excel Document Name",
+                        //            filename: "BBBootstrap" + new Date().toISOString().replace(/[\-\:\.]/g, "") + ".xls",
+                        //            fileext: ".xls",
+                        //            exclude_img: true,
+                        //            exclude_links: true,
+                        //            exclude_inputs: true,
+                        //            preserveColors: false
+                        //        });
+                        //    }
+
+                        //var csv_data = [];
+                        //var rows = document.getElementsByTagName('tr');
+
+                        //for (var i = 0; i < rows.length; i++) {
+
+                        //    var cols = rows[i].querySelectorAll('td,th');
+
+                        //    var csvrow = [];
+
+                        //    for (var j = 0; j < cols.length; j++) {
+
+                        //        csvrow.push(cols[j].innerHTML);
+
+                        //    }
+                        //    csv_data.push(csvrow.join(","));
+
+                        //}
+                        //csv_data = csv_data.join('\n');
+                        
+
+                        //CSVFile = new Blob([csv_data], {
+
+                        //    type: "text/csv"
+
+                        //});
+                       
+
+                        //var temp_link = document.createElement('a');
+                        //temp_link.download = "ContactData.csv";
+
+                        //var url = window.URL.createObjectURL(CSVFile);
+                        //console.log('workednn');
+
+                        //temp_link.href = url;
+                        //temp_link.style.display = "none";
+
+                        //document.body.appendChild(temp_link);
+                        
+
+                        //temp_link.click();
+
+                        //document.body.removeChild(temp_link);
+                        
+                        
+                   // }
+
+                
+           // }*@

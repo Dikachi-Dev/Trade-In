@@ -1,0 +1,61 @@
+﻿@page
+@model TradeIn.Pages.Admin.Components.PriceList.IndexModel
+
+@{
+    Layout = "/Pages/Admin/_AdminLayout.cshtml";
+    ViewData["Title"] = "Index";
+}
+
+<h1>Price Lists</h1>
+
+<p>
+    <a asp-page="Create">Add New Item Price</a>
+</p>
+
+<table id="table"
+       data-show-export="true"
+       data-pagination="true"
+       data-side-pagination="server"
+       data-click-to-select="true"
+       data-toolbar="#toolbar"
+       data-show-toggle="true"
+       data-show-columns="true"
+       data-search="true"
+       data-url="/Admin/Components/PriceList/Index?handler=PriceList">
+    <thead>
+        <tr>
+            
+            <th data-field="brand">Brand</th>
+            <th data-field="category">Category</th>
+            <th data-field="model">Model</th>
+            <th data-field="generation">Generation</th>
+           
+            <th data-field="condition">Condition</th>
+            <th data-field="price">Price</th>
+            <th data-field="delete"></th>
+            <th data-field="details"></th>
+            <th data-field="edit"></th>
+
+
+
+        </tr>
+    </thead>
+</table>
+
+
+@section Scripts{
+    <script>
+       
+        var $table = $('#table')
+
+
+
+        $table.bootstrapTable('destroy').bootstrapTable({
+            exportDataType: 'all',
+            exportTypes: ['csv', 'excel', 'pdf'],
+
+        });
+
+
+    </script>
+            }

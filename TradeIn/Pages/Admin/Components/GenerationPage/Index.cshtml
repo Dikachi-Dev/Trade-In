@@ -1,0 +1,61 @@
+﻿@page
+@model TradeIn.Pages.Admin.Components.GenerationPage.IndexModel
+
+@{
+    Layout = "/Pages/Admin/_AdminLayout.cshtml";
+    ViewData["Title"] = "Index";
+}
+
+<h1>Model Generations</h1>
+
+<p>
+    <a asp-page="Create">Add New</a>
+</p>
+
+
+<table id="table"
+       data-show-export="true"
+       data-pagination="true"
+       data-side-pagination="server"
+       data-click-to-select="true"
+       data-toolbar="#toolbar"
+       data-show-toggle="true"
+       data-show-columns="true"
+       data-search="true"
+       data-url="/Admin/Components/GenerationPage/Index?handler=Generation">
+    <thead>
+        <tr>
+
+
+
+            <th data-field="description">Description</th>
+            <th data-field="model">Model</th>
+            <th data-field="delete"></th>
+            <th data-field="details"></th>
+            <th data-field="edit"></th>
+
+
+
+        </tr>
+    </thead>
+</table>
+
+
+
+
+@section Scripts{
+    <script>
+
+        var $table = $('#table')
+
+
+
+        $table.bootstrapTable('destroy').bootstrapTable({
+            exportDataType: 'all',
+            exportTypes: ['csv', 'excel', 'pdf'],
+
+        });
+
+
+    </script>
+            }

@@ -1,0 +1,173 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+.head {
+    padding: 100px;
+    background-color: mediumpurple;
+    box-shadow: rgb(0, 0, 0) 10px 10px;
+    text-align: center;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.new {
+    padding: 50px;
+}
+
+.storepage {
+    width: 100%
+}
+
+.service-page {
+    padding: 12px 3%;
+    background-color: #fff
+}
+
+@media (min-width:768px) {
+    .service-page {
+        padding: 24px 3%
+    }
+}
+
+@media (min-width:1024px) {
+    .service-page {
+        padding: 45px 3%
+    }
+}
+
+/*.card-group {
+    @include media-breakpoint-only(lg) {
+        column-count: 3;
+    }
+
+    @include media-breakpoint-only(xl) {
+        column-count: 3;
+    }
+}*/
+
+/*
+ CSS for the main interaction
+*/
+
+.base {
+    padding: 5% 10% 5% 10%;
+}
+
+.accordion > input[name="collapse"] {
+    display: none;
+    /*position: absolute;
+  left: -100vw;*/
+}
+
+.accordion label,
+.accordion .content {
+    margin: 0 auto;
+}
+
+.accordion .content {
+    background: #fff;
+    overflow: hidden;
+    height: 0;
+    transition: 0.5s;
+}
+
+.accordion > input[name="collapse"]:checked ~ .content {
+    height: 380px;
+    transition: height 0.5s;
+}
+
+.accordion label {
+    display: block;
+}
+
+/* For Desktop */
+@media only screen and (min-width: 620px) {
+    .accordion > input[name="collapse"]:checked ~ .content {
+        height: 220px;
+    }
+
+    .base {
+        padding: 5% 20% 5% 20%;
+    }
+}
+
+.accordion {
+    margin-bottom: 1em;
+}
+
+    .accordion > input[name="collapse"]:checked ~ .content {
+        border-top: 0;
+        transition: 0.3s;
+    }
+
+    .accordion .handle {
+        margin: 0;
+        font-size: 16px;
+    }
+
+    .accordion label {
+        border: 1px solid grey;
+        border-radius: 10px;
+        color: black;
+        cursor: pointer;
+        font-weight: normal;
+        padding: 10px;
+        background: white;
+        user-select: none;
+    }
+
+        .accordion label:hover,
+        .accordion label:focus {
+            background: grey;
+        }
+
+    .accordion .handle label:before {
+        font-family: FontAwesome;
+        content: "\f107";
+        display: inline-block;
+        margin-right: 10px;
+        font-size: 1em;
+        line-height: 1.556em;
+        vertical-align: middle;
+        transition: 0.4s;
+    }
+
+    .accordion > input[name="collapse"]:checked ~ .handle label:before {
+        transform: rotate(180deg);
+        transform-origin: center;
+        transition: 0.4s;
+    }
+
+/*
+ Demo purposes only
+*/
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+.accordion p:last-child {
+    margin-bottom: 0;
+}
+
+.hiddens {
+    padding: 0% 20% 0% 20%;
+    text-align: left;
+}

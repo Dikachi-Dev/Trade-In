@@ -1,0 +1,279 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TradeIn</title>
+   @* <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap-grid.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-utilities.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-reboot.css" asp-append-version="true" />*@
+    <!-- CSS only -->
+        <!-- Font Awesome -->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+   
+    <link rel="stylesheet" href="~/TradeIn.styles.css" asp-append-version="true" />
+</head>
+<body class="container-fluid">
+    
+
+    <style>
+
+
+    .testt {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 100%;
+            border: 1px solid #000;
+            border-color: #cdd8df;
+            padding: 10px;
+            background-color: #fff;
+        }
+            .amp-text-blocks-items-icon {
+      width: 35px;
+      height: 35px;
+    }
+
+    .tab-pane {
+        padding:2rem 0;
+    }
+
+    .nav-link {
+        background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(3,3,37,0.1) 100%);
+    }
+    .nav-link.active {
+        font-weight: bold;
+        background:#fff;
+    }
+    </style>
+    <div class="text-center" style="border-radius: 10px;  margin-left: 20px; margin-right: 20px; margin-top: 10px;">
+
+        <img src="web banner_V2.jfif" class="img-fluid" style="border-radius: 10px;" />
+    </div>
+
+   
+
+    <div style="margin-left: 20px; margin-right: 20px; padding-top: 40px">
+  
+        <div class="container-fluid">
+            <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">How to trade</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Why Trade In</button>
+              </li>
+              @*<li class="nav-item" role="presentation">
+                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Offers</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false" >FAQs</button>
+              </li>*@
+          </ul>
+
+          <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                    <div class="container-fluid">
+                        <div class="row g-4">
+                            <div class="col-lg" style="text-align: center;">
+                                <div class="card" style="padding:40px; border-radius:10px; height:450px;">
+                                    @*<div class="testt">
+
+                                        <img src="~/one.png" alt="" class="amp-text-blocks-items-icon">
+                                    </div>*@
+                              
+                                    <div class="card-body">
+                                        <h4>Get an instant valuation below</h4>
+                                        <p>
+                                            Get an instant valuation for your old device using our quick calculator below. You’ll be presented with an estimate reference, which you can print off or send to your email address.
+
+                                        </p>
+                                        <h4>Laptops</h4>
+                                        <p>
+                                            If your estimate is for a laptop you can complete your Laptop trade-in online or choose to send the estimate to your email address. This estimate is valid for 7 days.</p>
+                                    </div>
+                             
+                                </div>
+                            </div>
+                            <div class="col-lg" style=" text-align: center; ">
+                               <div class="card" style=" padding: 40px;  border-radius:10px; height: 450px;">
+                                   @*<div class="testt">
+
+                                        <img src="~/two.png" alt="" class="amp-text-blocks-items-icon">
+                                    </div>*@
+                              
+                                    <div class="card-body">
+                                        <h4>Select your new product</h4>
+                                        <p>
+                                            Browse our products online
+                                        </p>
+                                    </div>
+                             
+                                </div>
+                            </div>
+                            <div class="col-lg" style="text-align: center">
+                                <div class="card" style="padding: 40px;  border-radius:10px; height: 450px;">
+                                    @*<div class="testt">
+
+                                        <img src="~/three.png" alt="" class="amp-text-blocks-items-icon">
+                                    </div>*@
+                              
+                                    <div class="card-body">
+                                        <h4>Visit us instores</h4>
+                                        <p>
+                                            Bring your old device and your device estimate in to store. We’ll process your trade-in and give you a gift card towards the new product you’ve selected.
+                                        </p>
+                                        <h4>Laptops</h4>
+                                        <p>Use your estimate to complete your trade-in below, and receive cash straight in to your bank account to buy the new product you’ve selected!</p>
+                                    </div>
+                             
+                                </div>
+                            </div>
+                       
+                        </div>
+                    </div>
+
+                </div>
+                <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                    <div class="container-fluid">
+                        <div class="row g-4">
+                            <div class="col-lg" style=" text-align: center;">
+                                <div class="card" style="padding:40px; border-radius:10px; height:400px;">
+                                    <div class="testt">
+
+                                        <img src="~/wallet-svg.svg" alt="" class="amp-text-blocks-items-icon">
+                                    </div>
+                              
+                                    <div class="card-body">
+                                        <h4>Get paid instantly</h4>
+                                        <p>
+                                            Trade-in your old laptop online and receive cash straight in to your bank account to buy something you really want.<br />
+                                            Alternatively, trade-in your old device in store today and get a gift card instantly.
+                                        </p>
+                                    </div>
+                             
+                                </div>
+                            </div>
+                            <div class="col-lg" style=" text-align: center;">
+                               <div class="card" style="padding:40px; border-radius:10px; height:400px;">
+                                   <div class="testt">
+
+                                        <img src="~/secure-svg.svg" alt="" class="amp-text-blocks-items-icon">
+                                    </div>
+                              
+                                    <div class="card-body">
+                                        <h4>Security</h4>
+                                        <p>
+                                            We'll wipe your old device to government standards so you don't need to worry about your data.
+                                        </p>
+                                    </div>
+                             
+                                </div>
+                            </div>
+                            <div class="col-lg" style=" text-align: center;">
+                                <div class="card" style="padding:40px; border-radius:10px; height:400px;">
+                                    <div class="testt">
+
+                                        <img src="~/monitor-svg.svg" alt="" class="amp-text-blocks-items-icon">
+                                    </div>
+                              
+                                    <div class="card-body">
+                                        <h4>We accept all kinds of devices</h4>
+                                        <p>
+                                            We're happy to take most types and makes of device - we even take damaged and non-working devices.
+                                        </p>
+                                    </div>
+                             
+                                </div>
+                            </div>
+                            <div class="col-lg" style=" text-align: center;">
+                                <div class="card" style="padding:40px; border-radius:10px; height:400px;">
+                                    <div class="testt">
+
+                                        <img src="~/voucher-svg.svg" alt="" class="amp-text-blocks-items-icon">
+                                    </div>
+                              
+                                    <div class="card-body">
+                                        <h4>Easy valuation</h4>
+                                        <p>
+                                            Quickly find out how much your device is worth using our handy online tool.
+                                        </p>
+                                    </div>
+                             
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+        
+  
+            
+        </div>
+    </div>
+
+
+
+    <div class="row justify-content-center" id="sel">
+        <div class="col-lg-10" style=" padding: 30px; border-radius: 10px; text-align: center;">
+            <div style="text-align:center; padding-top: 20px; padding-bottom: 40px;">
+                <h3 style="text-align: center;">How to trade-in</h3>
+            </div>
+
+            <div class="container" style=" padding-top: 20px; padding-bottom: 30px;">
+                <h5 style="float:left">Get estimate</h5>
+            </div>
+            <div style="border: 1px solid grey; border-radius: 10px;">
+                <main role="main" class="pb-3 autofocus" autofocus>
+                    @RenderBody()
+                </main>
+            </div>
+        </div>
+    </div>
+
+  
+            
+
+
+
+   
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2022 - Computer TradeIn - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+    <!-- JavaScript Bundle with Popper -->
+    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>*@
+   
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        let inputElem = document.querySelector("main");
+        window.addEventListener('load', function (e) {
+            inputElem.focus();
+        })
+        window.addEventListener('reload', function (e) {
+            inputElem.focus();
+        })
+       
+    </script>
+    
+    
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,123 @@
+﻿@page
+@model TradeIn.Pages.Admin.Components.PriceList.CreateModel
+
+@{
+    Layout = "/Pages/Admin/_AdminLayout.cshtml";
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Valuation</h4>
+<hr />
+<div class="row justify-content-center">
+    <div class="col-md-12" style="padding: 5% 10% 5% 10%; font-size:20px">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="input-group-lg p-2">
+                <label asp-for="Valuation.Category" class="control-label" style="float: left;"></label>
+                <select class="form-select" id="category" asp-for="Valuation.Category" >
+                    <option value="">--Select--</option>
+                    <option value="Laptop">Laptop</option>
+                    <option value="Phone">Phone</option>
+                    <option value="Watch">Watch</option>
+                    <option value="Tablet">Tablet</option>
+                </select>
+                <span asp-validation-for="Valuation.Category" class="text-danger"></span>
+            </div>
+
+            <div class="input-group-lg p-2">
+                <label asp-for="Valuation.Brand" class="control-label" style="float: left;"></label>
+                <select class="form-select" id="brands" asp-for="Valuation.Brand">
+                    <option value="select">--select--</option>
+              </select>
+                <span asp-validation-for="Valuation.Brand" class="text-danger"></span>
+            </div>
+
+            <div class="input-group-lg p-2">
+                <label asp-for="Valuation.Model" class="control-label" style="float: left;"></label>
+                <select class="form-select" id="models" asp-for="Valuation.Model">
+                    <option value="select">--Select--</option>
+              </select>
+                <span asp-validation-for="Valuation.Model" class="text-danger"></span>
+            </div>
+
+            <div class="input-group-lg p-2">
+                <label asp-for="Valuation.Generation" class="control-label" style="float: left;"></label>
+                <select class="form-select" id="generations" asp-for="Valuation.Generation">             
+                    <option value="select">--select--</option>
+              </select>
+                <span asp-validation-for="Valuation.Generation" class="text-danger"></span>
+            </div>
+
+            <div class="input-group-lg p-2">
+                <label asp-for="Valuation.Condition" class="control-label" style="float: left;"></label>
+                <select class="form-select" id="condition" asp-for="Valuation.Condition" onchange="changeFunc(value);">
+                    <option value="">--Select--</option>               
+                    <option value="Working">Working</option>
+                    <option value="Not working">Not Working</option>
+              </select>
+                <span asp-validation-for="Valuation.Condition" class="text-danger"></span>
+            </div> 
+
+            <div class="input-group-lg p-2">
+                <label asp-for="Valuation.Price" class="control-label" style="float: left;"></label>
+                <input asp-for="Valuation.Price" class="form-control" />
+                <span asp-validation-for="Valuation.Price" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    <script>
+        $('#category').change(function () {  
+            console.log($('#category').val());
+            $.getJSON("/Admin/Components/PriceList/Create?handler=Brands", { Id: $('#category').val() }, function (cards) {
+                //$('#models').find('option').remove();
+                $.each(cards, function (index, card) {
+                    console.log(card);
+                    $('#brands').append('<option value="' + card.id + '">' + card.description + '</option>')
+
+                });
+
+            });
+        });
+
+        $('#brands').change(function () {
+            $.getJSON("/Admin/Components/PriceList/Create?handler=Models", { Id: $('#brands').val() }, function (cards) {
+                //$('#generations').find('option').remove();
+                $.each(cards, function (index, card) {
+                    console.log(card);
+                    $('#models').append('<option value="' + card.id + '">' + card.description + '</option>')
+
+                });
+
+            });
+        });
+        $('#models').change(function () {
+            $.getJSON("/Admin/Components/PriceList/Create?handler=Gen", { Id: $('#models').val() }, function (cards) {
+                //$('#generations').find('option').remove();
+                $.each(cards, function (index, card) {
+                    console.log(card);
+                    $('#generations').append('<option value="' + card.id + '">' + card.description + '</option>')
+
+                });
+
+            });
+        });
+    </script>
+
+
+
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

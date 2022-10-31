@@ -1,0 +1,101 @@
+﻿@page
+@model TradeIn.Pages.Admin.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "_AdminLayout.cshtml";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>EstimateRef</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EstimateRef.FirstName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EstimateRef.FirstName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EstimateRef.LastName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EstimateRef.LastName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EstimateRef.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EstimateRef.Email)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EstimateRef.PhoneNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EstimateRef.PhoneNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EstimateRef.Refnumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EstimateRef.Refnumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EstimateRef.Estimatedate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EstimateRef.Estimatedate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EstimateRef.Category)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EstimateRef.Category)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EstimateRef.Brand)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EstimateRef.Brand)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EstimateRef.Model)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EstimateRef.Model)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EstimateRef.OtherItem)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EstimateRef.OtherItem)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EstimateRef.Generation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EstimateRef.Generation)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EstimateRef.Condition)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EstimateRef.Condition)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EstimateRef.Amount)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EstimateRef.Amount)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="EstimateRef.Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

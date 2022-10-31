@@ -1,0 +1,84 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+
+
+
+    <div style="padding: 30px; text-align: center"> 
+        
+        <div class="card-group">
+          <div class="card">
+            <a asp-area="" asp-page="/Laptop"><img class="card-img-top resp" src="~/Laptops.png" alt="Card image cap"></a>
+            <div class="card-body">
+              <h5 class="card-title"><a asp-area="" asp-page="/Laptop">Laptop</a></h5>
+            </div>
+          </div>
+          <div class="card p-3">
+            <a asp-area="" asp-page="/Phone"><img class="card-img-top resp" src="~/Phones.png" alt="Card image cap"></a>
+            <div class="card-body">
+              <h5 class="card-title"><a asp-area="" asp-page="/Phone">Phone</a></h5>
+            </div>
+          </div>
+          <div class="card p-3">
+            <a asp-area="" asp-page="/Tablet"><img class="card-img-top resp" src="~/Tablets.png" alt="Card image cap"></a>
+            <div class="card-body">
+              <h5 class="card-title"><a asp-area="" asp-page="/Tablet">Tablet</a></h5>
+            </div>
+          </div>
+          <div class="card p-3">
+            <a asp-area="" asp-page="/OtherItem"><img class="card-img-top resp" src="~/Others.png" alt="Card image cap"></a>
+            <div class="card-body">
+              <h5 class="card-title"><a asp-area="" asp-page="/OtherItem">Other Item</a></h5>
+            </div>
+          </div>
+        </div>
+
+ 
+
+
+
+
+
+
+
+        
+        @*<table style="width:100%">
+          
+          <tr >
+            <td>
+                <div style="text-align:center;">
+                    <a asp-area="" asp-page="/Laptop"><img src="~/Laptops.png" class="img-responsive" /></a>
+                    <p>laptop</p>
+                </div>
+            </td>
+            <td>
+                <div style="text-align:center;">
+                    <a asp-area="" asp-page="/Phone"><img src="~/Phones.png" class="img-responsive" /></a>
+                    <p>Phone</p>
+                </div>
+            </td>
+          </tr>
+          <tr>
+           <td>
+               <div style="text-align:center;">
+                    <a asp-area="" asp-page="/Tablet"><img src="~/Tablets.png" class="img-responsive" /></a>
+                    <p>Tablet</p>
+                </div>
+           </td>
+           <td>
+               <div style="text-align:center;">
+                    <a asp-area="" asp-page="/Watch"><img src="~/Others.png" class="img-responsive" /></a>
+                    <p>Watch</p>
+                </div>
+           </td>
+            
+          </tr>
+          
+        </table>*@
+    </div>
+
+
